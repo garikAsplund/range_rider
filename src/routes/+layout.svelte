@@ -27,7 +27,7 @@
 
 	<!-- Content -->
 	<nav
-		class="container relative z-10 flex flex-col-reverse items-center justify-center min-h-screen p-4 mx-auto text-2xl font-thin text-gray-200 md:min-h-fit md:justify-between md:flex-row"
+		class="container relative z-10 flex-col-reverse items-center justify-center hidden min-h-screen p-4 mx-auto text-2xl font-thin text-gray-200 md:min-h-fit md:justify-between md:flex-row md:flex"
 	>
 		<OpenSign bind:isOpen />
 
@@ -52,6 +52,8 @@
 		<!-- Contact -->
 	</nav>
 
+<slot />
+	
 	<!-- Footer -->
 	<footer
 		class="fixed bottom-0 left-0 right-0 z-10 flex-col justify-center mb-4 text-center text-white"

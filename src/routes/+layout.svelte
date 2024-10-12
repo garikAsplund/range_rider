@@ -11,23 +11,23 @@
 		console.log({ userAgent });
 	}
 
-	setTimeout(() => {
-		isOpen = !isOpen;
-	}, 3000);
+	// setTimeout(() => {
+	// 	isOpen = !isOpen;
+	// }, 3000);
 </script>
 
-<div class="relative min-h-screen overflow-hidden bg-[#0a0a0a]">
+<div class="relative z-0 min-h-screen overflow-hidden bg-[#0a0a0a]">
 	<enhanced:img
 		src="/static/range_rider_night.jpg"
 		alt=""
-		class="absolute -top-12 object-contain md:inset-0 md:w-full md:h-full md:min-h-screen {isOpen
+		class="absolute -z-10 -top-12 object-contain md:inset-0 md:w-full md:h-full md:min-h-screen {isOpen
 			? 'saturate-100'
 			: 'saturate-0'}"
 	/>
 
 	<!-- Content -->
 	<nav
-		class="container relative z-10 flex-col-reverse items-center justify-center hidden min-h-screen p-4 mx-auto text-2xl font-thin text-gray-200 md:min-h-fit md:justify-between md:flex-row md:flex"
+		class="container relative z-0 flex-col-reverse items-center justify-center hidden min-h-screen p-4 mx-auto text-2xl font-thin text-gray-200 md:min-h-fit md:justify-between md:flex-row md:flex"
 	>
 		<OpenSign bind:isOpen />
 
@@ -45,11 +45,20 @@
 		<button class="p-2 hover:opacity-85"><a href="/menu">Menu</a></button>
 
 		<!-- Order now! -->
-		<button class="p-2 border-red-500 border rounded-sm hover:opacity-85 {isOpen ? '' : 'invisible'}"
+		<button
+			class="p-2 border-red-500 border rounded-sm hover:opacity-85 {isOpen ? '' : 'hidden'}"
 			><a href="https://www.toasttab.com/range-rider-107-northwest-1st-street/v3">Order now!</a
 			></button
 		>
-		<!-- Contact -->
+		<!-- Hours when closed -->
+		<div class="flex flex-col space-y-2 {isOpen ? 'hidden' : ''}">
+			<p class="text-xs text-center text-gray-200 font-extralight">
+				11 am to 10 pm
+			</p>
+			<p class="text-xs text-center text-gray-200 font-extralight">
+				Closed Sundays
+			</p>
+		</div>
 	</nav>
 
 	<slot />
@@ -58,15 +67,15 @@
 	<footer
 		class="fixed bottom-0 left-0 right-0 z-10 flex-col justify-center mb-4 text-center text-white"
 	>
-		<p class="pb-2 text-xl text-center text-gray-400 md:text-gray-200 font-extralight">
+		<p class="pb-2 text-xl text-center text-gray-400 -translate-y-7 md:text-gray-200 font-extralight">
 			<a
 				href="https://www.google.com/maps/dir//107%20NW%201st%20St,%20Enterprise,%20Oregon%2097828"
 				target="_blank"
 				class="hover:opacity-85">107 NW 1st St, Enterprise, Oregon 97828</a
 			>
 		</p>
-		<div class="flex justify-between m-4 space-x-4 md:justify-center">
-			<a href="https://www.facebook.com/rangerideroregon/" target="_blank" class="hover:opacity-85">
+		<div class="flex items-center justify-between space-x-4 md:justify-center">
+			<a href="https://www.facebook.com/rangerideroregon/" target="_blank" class="p-4 md:p-1 hover:opacity-85">
 				<svg
 					aria-label="Range Rider on Facebook"
 					fill="currentColor"
@@ -89,10 +98,19 @@
 					></path></svg
 				></a
 			>
+			<!-- Hours when closed -->
+		<div class="flex flex-col space-y-2 md:hidden">
+			<p class="text-xs text-center text-gray-200 font-extralight">
+				11 am to 10 pm
+			</p>
+			<p class="text-xs text-center text-gray-200 font-extralight">
+				Closed Sundays
+			</p>
+		</div>
 			<a
 				href="https://www.instagram.com/therangerideroregon"
 				target="_blank"
-				class="hover:opacity-85"
+				class="p-4 md:p-1 hover:opacity-85"
 			>
 				<svg
 					aria-label="Range Rider on Instagram"

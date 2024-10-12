@@ -3,7 +3,7 @@
 </script>
 
 <div class="flex-col items-center justify-center space-y-1.5">
-	<p class="text-xs text-center text-gray-200  font-extralight">11 am to 10 pm</p>
+	<p class="text-xs text-center text-gray-200 font-extralight hidden md:flex {isOpen ? '' : 'hidden'}">11 am to 10 pm</p>
 	<div class="flex items-center justify-center gap-2">
 		<div
 			class={`
@@ -19,5 +19,5 @@
 		></div>
 		<span class="text-lg text-gray-200 uppercase">{isOpen ? 'Open' : 'Closed'}</span>
 	</div>
-	<p class="text-xs text-center text-gray-200 font-extralight">Closed Sundays</p>
+	<p class="text-xs text-center text-gray-200 font-extralight hidden md:flex {isOpen ? '' : 'hidden'}">Closed Sundays</p>
 </div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '../app.css';
+	// import '../app.css';
 	import OpenSign from '$lib/components/ui/button/OpenSign.svelte';
 
 	let isOpen: boolean = $state(true);
@@ -26,7 +26,7 @@
 	<!-- Phone number: clickable link on mobile, plain text on desktop -->
 	<div class="m-11">
 		{#if isMobile}
-			<a href="tel:541-426-2337 !text-xl" class="">(541) 426-2337</a>
+			<a href="tel:541-426-2337" class="text-xl">(541) 426-2337</a>
 		{:else}
 			<span>(541) 426-2337</span>
 		{/if}

@@ -11,9 +11,9 @@
 		console.log({ userAgent });
 	}
 
-	// setTimeout(() => {
-	// 	isOpen = !isOpen;
-	// }, 3000);
+	setTimeout(() => {
+		isOpen = !isOpen;
+	}, 3000);
 </script>
 
 <div class="relative min-h-screen overflow-hidden bg-[#0a0a0a]">
@@ -31,6 +31,8 @@
 	>
 		<OpenSign bind:isOpen />
 
+		<!-- Music -->
+		<button class="p-2 hover:opacity-85"><a href="/music">Music</a></button>
 		<!-- Phone number: clickable link on mobile, plain text on desktop -->
 		<div class="!top-0">
 			{#if isMobile}
@@ -39,26 +41,24 @@
 				<span>(541) 426-2337</span>
 			{/if}
 		</div>
-		<!-- Music -->
-		<button class="p-2 hover:opacity-85"><a href="/music">Music</a></button>
 		<!-- Menu -->
 		<button class="p-2 hover:opacity-85"><a href="/menu">Menu</a></button>
 
 		<!-- Order now! -->
-		<button class="p-2 border-red-500 border rounded-sm hover:opacity-85 {isOpen ? '' : 'hidden'}"
+		<button class="p-2 border-red-500 border rounded-sm hover:opacity-85 {isOpen ? '' : 'invisible'}"
 			><a href="https://www.toasttab.com/range-rider-107-northwest-1st-street/v3">Order now!</a
 			></button
 		>
 		<!-- Contact -->
 	</nav>
 
-<slot />
-	
+	<slot />
+
 	<!-- Footer -->
 	<footer
 		class="fixed bottom-0 left-0 right-0 z-10 flex-col justify-center mb-4 text-center text-white"
 	>
-		<p class="pb-2 text-xl text-center font-extralight">
+		<p class="pb-2 text-xl text-center text-gray-400 md:text-gray-200 font-extralight">
 			<a
 				href="https://www.google.com/maps/dir//107%20NW%201st%20St,%20Enterprise,%20Oregon%2097828"
 				target="_blank"

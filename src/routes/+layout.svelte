@@ -39,15 +39,15 @@
 		class="container relative z-10 flex-col-reverse items-center justify-center hidden min-h-screen p-4 mx-auto overflow-hidden text-2xl font-thin text-gray-200 md:min-h-fit md:justify-between md:flex-row md:flex"
 		aria-label="Main navigation"
 	>
-	    <!-- Open sign -->
+		<!-- Open sign -->
 		<OpenSign bind:isOpen />
 
 		<!-- Music -->
-		<button class="p-2 hover:opacity-85"
+		<button class="p-6 m-6 hover:opacity-85"
 			><a href="/music" class={$page.data.path.includes('Music') ? 'border-b' : ''}>Music</a
 			></button
 		>
-		
+
 		<!-- Phone number: clickable link on mobile, plain text on desktop -->
 		<div>
 			{#if isMobile}
@@ -69,7 +69,7 @@
 			><a href="https://www.toasttab.com/range-rider-107-northwest-1st-street/v3">Order now!</a
 			></button
 		>
-		
+
 		<!-- Hours when closed -->
 		<div class="flex flex-col space-y-2 {isOpen ? 'hidden' : ''}">
 			<p class="text-xs text-center text-gray-200 font-extralight">11 am to 10 pm</p>
@@ -102,7 +102,6 @@
 			{/if}
 		</p>
 		<div class="flex items-center justify-between space-x-4 md:justify-center">
-			
 			<!-- Facebook -->
 			<a
 				href="https://www.facebook.com/rangerideroregon/"
@@ -131,13 +130,13 @@
 					></path></svg
 				></a
 			>
-			
+
 			<!-- Hours when closed -->
 			<div class="flex flex-col space-y-2 md:hidden">
 				<p class="text-xs text-center text-gray-200 font-extralight">11 am to 10 pm</p>
 				<p class="text-xs text-center text-gray-200 font-extralight">Closed Sundays</p>
 			</div>
-			
+
 			<!-- Instagram -->
 			<a
 				href="https://www.instagram.com/therangerideroregon"

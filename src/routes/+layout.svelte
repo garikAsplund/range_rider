@@ -15,7 +15,7 @@
 		console.log({ userAgent });
 	}
 
-	console.log($page.data.path);
+	// console.log($page.data.path);
 
 	// setTimeout(() => {
 	// 	isOpen = !isOpen;

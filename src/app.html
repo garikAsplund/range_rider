@@ -6,6 +6,61 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>The Range Rider | Bar and Grill</title>
 		<!-- ADD SEO SHIT HERE -->
+		<!-- SEO Meta Tags -->
+		<meta
+			name="description"
+			content="The Range Rider Bar and Grill - Enjoy delicious food, craft beers, and live music at your favorite local spot in [Location]."
+		/>
+		<meta
+			name="keywords"
+			content="Range Rider, Bar, Grill, Restaurant, Enterprise, Oregon, Wallowa County, food, craft beer, live music"
+		/>
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="The Range Rider Bar and Grill" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:title" content="The Range Rider | Bar and Grill" />
+		<meta
+			property="og:description"
+			content="Enjoy delicious food, craft beers, and live music at The Range Rider."
+		/>
+		<meta property="og:image" content="%sveltekit.assets%/og-image.jpg" />
+		<meta property="og:url" content="https://www.rangerideroregon.com" />
+		<meta property="og:type" content="restaurant" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="The Range Rider | Bar and Grill" />
+		<meta
+			name="twitter:description"
+			content="The best place for food, drinks, and entertainment in Wallowa County."
+		/>
+		<meta name="twitter:image" content="%sveltekit.assets%/twitter-image.jpg" />
+
+		<!-- Local Business Schema Markup -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Restaurant",
+				"name": "The Range Rider Bar and Grill",
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "107 NW 1st St",
+					"addressLocality": "Enterprise",
+					"addressRegion": "Oregon",
+					"postalCode": "97828",
+					"addressCountry": "US"
+				},
+				"image": "%sveltekit.assets%/restaurant.jpg",
+				"telephone": "+1-541-426-2337",
+				"priceRange": "$$",
+				"servesCuisine": "Bar, Grill, Specials",
+				"menu": "https://www.rangerideroregon.com/menu",
+				"url": "https://www.rangerideroregon.com",
+				"openingHours": "Mo-Sa 11:00-22:00"
+			}
+		</script>
+
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

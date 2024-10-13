@@ -18,7 +18,7 @@
 
 	setTimeout(() => {
 		isOpen = !isOpen;
-	}, 3000);
+	}, 7000);
 </script>
 
 <div class="relative z-0 min-h-screen overflow-hidden bg-[#0a0a0a]">
@@ -77,11 +77,15 @@
 		class="fixed bottom-0 left-0 right-0 z-10 flex-col justify-center mb-4 text-center text-white"
 	>
 		<p class="pb-2 text-xl text-center text-gray-400 -translate-y-7 md:text-gray-200 font-extralight">
+			{#if $page.data.path != 'Music'}
 			<a
 				href="https://www.google.com/maps/dir//107%20NW%201st%20St,%20Enterprise,%20Oregon%2097828"
 				target="_blank"
 				class="hover:opacity-85">107 NW 1st St, Enterprise, Oregon 97828</a
 			>
+			{:else}
+			<p>Booking: rangeridermusic@gmail.com</p>
+			{/if}
 		</p>
 		<div class="flex items-center justify-between space-x-4 md:justify-center">
 			<a href="https://www.facebook.com/rangerideroregon/" target="_blank" class="p-4 md:p-1 hover:opacity-85">

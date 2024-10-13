@@ -20,17 +20,18 @@
 <nav
 	class="container relative z-10 flex flex-col items-center justify-center min-h-screen p-4 mx-auto text-2xl font-thin text-gray-200 bg-black/50 md:min-h-fit md:justify-between md:flex-row md:hidden"
 	aria-label="Main navigation"
->
+>	<div class="absolute top-0 right-0 m-7"><OpenSign bind:isOpen /></div>
+
 	<!-- Order now! -->
 	<button
-		class="p-4 border-red-500 border rounded-sm hover:opacity-85 {isOpen ? '' : 'hidden'}"
+		class="p-5 m-5 border-red-500 border rounded-sm hover:opacity-85 {isOpen ? '' : 'hidden'}"
 		aria-hidden={!isOpen}
 		><a href="https://www.toasttab.com/range-rider-107-northwest-1st-street/v3">Order now!</a
 		></button
 	><!-- Menu -->
-	<button class="p-4 m-2 hover:opacity-85"><a href="/menu" aria-label="Menu">Menu</a></button>
+	<button class="p-5 m-5 hover:opacity-85"><a href="/menu" aria-label="Menu">Menu</a></button>
 	<!-- Music -->
-	<button class="p-4 m-2 hover:opacity-85"><a href="/music" aria-label="Music">Music</a></button>
+	<button class="p-5 m-5 hover:opacity-85"><a href="/music" aria-label="Music">Music</a></button>
 	<!-- Phone number: clickable link on mobile, plain text on desktop -->
 	<div class="m-11">
 		{#if isMobile}
@@ -42,5 +43,4 @@
 		{/if}
 	</div>
 	<!-- Contact -->
-	<div class="m-7"><OpenSign bind:isOpen /></div>
 </nav>

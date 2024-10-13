@@ -89,7 +89,7 @@
 		class="fixed bottom-0 left-0 right-0 z-10 flex-col justify-center mb-4 text-center text-white"
 	>
 		<p
-			class="pb-2 text-xl text-center text-gray-400 -translate-y-7 md:text-gray-200 font-extralight"
+			class="pb-2 text-xl text-center text-gray-300 -translate-y-7 md:text-gray-200 font-extralight"
 		>
 			{#if $page.data.path != 'Music'}
 				<a

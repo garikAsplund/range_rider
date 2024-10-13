@@ -36,7 +36,7 @@
 
 	<!-- Content -->
 	<nav
-		class="container relative z-10 flex-col-reverse items-center justify-center hidden min-h-screen p-4 mx-auto overflow-hidden text-2xl font-thin text-gray-200 md:min-h-fit md:justify-between md:flex-row md:flex"
+		class="container relative z-10 flex-col-reverse items-center justify-center hidden min-h-screen mx-auto overflow-hidden text-2xl font-thin text-gray-200 md:min-h-fit md:justify-between md:flex-row md:flex"
 		aria-label="Main navigation"
 	>
 		<!-- Open sign -->
@@ -44,14 +44,14 @@
 
 		<!-- Music -->
 		<button class="p-6 m-6 hover:opacity-85"
-			><a href="/music" class={$page.data.path.includes('Music') ? 'border-b' : ''}>Music</a
+			><a href="/music" class={$page.data.path.includes('Music') ? 'border-b' : ''} aria-label="Music">Music</a
 			></button
 		>
 
 		<!-- Phone number: clickable link on mobile, plain text on desktop -->
-		<div>
+		<div aria-label="Call Range Rider at 541-426-2337">
 			{#if isMobile}
-				<a href="tel:541-426-2337" aria-label="Call Range Rider at 541-426-2337">(541) 426-2337</a>
+				<a href="tel:541-426-2337" >(541) 426-2337</a>
 			{:else}
 				<span>(541) 426-2337</span>
 			{/if}
@@ -59,13 +59,14 @@
 
 		<!-- Menu -->
 		<button class="p-6 m-6 hover:opacity-85"
-			><a href="/menu" class={$page.data.path.includes('Menu') ? 'border-b' : ''}>Menu</a></button
+			><a href="/menu" class={$page.data.path.includes('Menu') ? 'border-b' : ''} aria-label="Menu">Menu</a></button
 		>
 
 		<!-- Order now! -->
 		<button
 			class="p-6 m-6 border-red-500 border rounded-sm hover:opacity-85 {isOpen ? '' : 'hidden'}"
 			aria-hidden={!isOpen}
+			aria-label="Order now!"
 			><a href="https://www.toasttab.com/range-rider-107-northwest-1st-street/v3">Order now!</a
 			></button
 		>

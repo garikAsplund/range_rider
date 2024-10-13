@@ -2,7 +2,7 @@
 	export let isOpen: boolean;
 </script>
 
-<div class="flex-col items-center justify-center space-y-1.5">
+<div class="flex-col items-center justify-center space-y-1.5" aria-label={isOpen ? 'Open' : 'Closed'}>
 	<p class="text-xs text-center text-gray-200 font-extralight hidden md:flex {isOpen ? '' : 'invisible'}">11 am to 10 pm</p>
 	<div class="flex items-center justify-center gap-2">
 		<div

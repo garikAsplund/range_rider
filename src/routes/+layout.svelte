@@ -1,6 +1,9 @@
 <script lang="ts">
 	import '../app.css';
+	import { page } from '$app/stores';
 	import OpenSign from '$lib/components/ui/button/OpenSign.svelte';
+
+	let { children } = $props()
 
 	let isOpen: boolean = $state(true);
 	// Detect if user is on a mobile device
@@ -11,28 +14,30 @@
 		console.log({ userAgent });
 	}
 
-	// setTimeout(() => {
-	// 	isOpen = !isOpen;
-	// }, 3000);
+	console.log($page.data.path);
+
+	setTimeout(() => {
+		isOpen = !isOpen;
+	}, 3000);
 </script>
 
 <div class="relative z-0 min-h-screen overflow-hidden bg-[#0a0a0a]">
 	<enhanced:img
 		src="/static/range_rider_night.jpg"
 		alt=""
-		class="absolute -z-10 -top-12 object-contain md:inset-0 md:w-full md:h-full md:min-h-screen {isOpen
+		class="absolute -z-10 -top-12 object-contain md:inset-0 md:w-full md:h-full {isOpen
 			? 'saturate-100'
 			: 'saturate-0'}"
 	/>
 
 	<!-- Content -->
 	<nav
-		class="container relative z-0 flex-col-reverse items-center justify-center hidden min-h-screen p-4 mx-auto text-2xl font-thin text-gray-200 md:min-h-fit md:justify-between md:flex-row md:flex"
+		class="container relative z-10 flex-col-reverse items-center justify-center hidden min-h-screen p-4 mx-auto overflow-hidden text-2xl font-thin text-gray-200 md:min-h-fit md:justify-between md:flex-row md:flex"
 	>
 		<OpenSign bind:isOpen />
 
 		<!-- Music -->
-		<button class="p-2 hover:opacity-85"><a href="/music">Music</a></button>
+		<button class="p-2 hover:opacity-85"><a href="/music" class="{$page.data.path.includes('Music') ? 'border-b' : ''}">Music</a></button>
 		<!-- Phone number: clickable link on mobile, plain text on desktop -->
 		<div class="!top-0">
 			{#if isMobile}
@@ -42,7 +47,7 @@
 			{/if}
 		</div>
 		<!-- Menu -->
-		<button class="p-2 hover:opacity-85"><a href="/menu">Menu</a></button>
+		<button class="p-2 hover:opacity-85"><a href="/menu" class="{$page.data.path.includes('Menu') ? 'border-b' : ''}">Menu</a></button>
 
 		<!-- Order now! -->
 		<button
@@ -61,7 +66,11 @@
 		</div>
 	</nav>
 
-	<slot />
+	<!-- <slot /> -->
+	<div class="relative flex flex-col items-center justify-center w-full overflow-hidden text-gray-200 bg-black/80">
+
+	 {@render children()}
+	</div>
 
 	<!-- Footer -->
 	<footer

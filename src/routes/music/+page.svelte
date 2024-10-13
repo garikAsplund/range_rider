@@ -1,4 +1,8 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
+	let navbarHeight: number = 0;
+
 	const bands: Array<{ name: string; date: string; time: string; link: string }> = [
 		{ name: 'Bart Budwig', date: 'Fri 8 Nov ', time: '8 pm', link: 'https://www.bartbudwig.com/' },
 		{
@@ -9,13 +13,18 @@
 		},
 		{ name: 'The Shook Twins', date: 'Sat 23 Nov ', time: '9 pm', link: 'https://shooktwins.com/' }
 	];
+
+    onMount(() => {
+		const navbar = document.querySelector('nav');
+		if (navbar) {
+			navbarHeight = navbar.offsetHeight;
+		}
+	});
 </script>
 
-<div
-	class="relative z-0 flex flex-col items-center justify-center w-full h-screen text-gray-200 bg-black/80"
->
+<div class="relative flex flex-col items-center justify-center w-full " style="height: calc(100vh - {navbarHeight}px);">
 	<!-- Home button in the upper right -->
-	<nav class="absolute top-4 md:flex md:inset-x-0 md:justify-center right-4">
+	<nav class="absolute top-4 right-4 md:justify-center md:flex md:inset-x-0">
 		<a href="/">
 			<svg
 				aria-label="Home"
@@ -35,14 +44,16 @@
 	</nav>
 
 	<!-- Centered band information -->
-	<div class="flex flex-col items-center w-1/2 -translate-y-12">
+	<div class="flex flex-col items-center justify-center w-full max-w-md px-4 -translate-y-12">
 		{#each bands as band}
-			<div class="flex flex-col space-y-2 text-center">
+			<div class="flex flex-col w-full space-y-2 text-center">
 				<div class="text-xl font-thin">{band.date}</div>
 				<a href={band.link} class="text-lg hover:text-gray-300">{band.name}</a>
 				<div class="font-thin text-normal">{band.time}</div>
 			</div>
-			<hr class="w-2/3 my-4 border-t border-gray-500" />
+			{#if band !== bands[bands.length - 1]}
+				<hr class="w-2/3 my-4 border-t border-gray-500" />
+			{/if}
 		{/each}
 	</div>
 </div>

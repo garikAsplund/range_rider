@@ -26,7 +26,7 @@
 	<enhanced:img
 		src="/static/range_rider_night.jpg"
 		alt=""
-		class="absolute -z-10 -top-12 object-contain md:inset-0 md:w-full md:h-full {isOpen &&
+		class="fixed -z-10 -top-12 object-contain md:inset-0 md:w-full md:h-full {isOpen &&
 		!$page.data.path.includes('Music') &&
 		isOpen &&
 		!$page.data.path.includes('Menu')
@@ -38,6 +38,7 @@
 	<nav
 		class="container relative z-10 flex-col-reverse items-center justify-center hidden min-h-screen mx-auto overflow-hidden text-2xl font-thin text-gray-200 md:min-h-fit md:justify-between md:flex-row md:flex"
 		aria-label="Main navigation"
+		id="main_navbar"
 	>
 		<!-- Open sign -->
 		<OpenSign bind:isOpen />
@@ -87,7 +88,7 @@
 
 	<!-- Footer -->
 	<footer
-		class="fixed bottom-0 left-0 right-0 z-10 flex-col justify-center mb-4 text-center text-white"
+		class="fixed bottom-0 left-0 right-0 z-10 flex-col justify-center mb-4 text-center text-white {$page.data.path.includes('Menu') ? 'hidden' : ''}"
 	>
 		<p
 			class="pb-2 text-xl text-center text-gray-300 -translate-y-7 md:text-gray-200 font-extralight"

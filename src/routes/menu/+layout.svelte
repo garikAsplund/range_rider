@@ -1,34 +1,26 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 
 	let { children } = $props();
-	let navbarHeight: number = 0;
+	let navbarHeight: number = $state(0);
 
-	const food: Array<{ name: string; date: string; time: string; link: string }> = [
-		{ name: 'Bart Budwig', date: 'Fri 8 Nov ', time: '8 pm', link: 'https://www.bartbudwig.com/' },
-		{
-			name: 'Margo Cilker',
-			date: 'Thu 14 Nov ',
-			time: '7 pm',
-			link: 'https://www.margocilkermusic.com/'
-		},
-		{ name: 'The Shook Twins', date: 'Sat 23 Nov ', time: '9 pm', link: 'https://shooktwins.com/' }
-	];
-
-    onMount(() => {
-		const navbar = document.querySelector('nav');
+	onMount(() => {
+		const navbar = document.getElementById('main_navbar');
 		if (navbar) {
 			navbarHeight = navbar.offsetHeight;
 		}
 	});
 </script>
 
-<div class="relative flex flex-col items-center justify-center w-full md:bg-black/80 bg-black/50" style="height: calc(100vh - {navbarHeight}px);">
-	<!-- Home button in the upper right -->
-	<nav class="absolute top-4 right-4 md:justify-center md:flex md:inset-x-0">
-		<a href="/">
+<div
+	class="relative flex flex-col items-center justify-center w-full md:bg-black/80 bg-black/50"
+	style="height: calc(100vh - {navbarHeight}px);"
+>
+	<!-- Home button -->
+	<div class="absolute top-4 right-4 md:justify-center md:flex md:inset-x-0 md:absolute">
+		<a href="/" aria-label="Home">
 			<svg
-				aria-label="Home"
 				class="x1lliihq x1n2onr6 x5n08af"
 				fill="white"
 				height="24"
@@ -36,32 +28,87 @@
 				viewBox="0 0 24 24"
 				width="24"
 			>
-				<title>Home</title>
 				<path
 					d="M22 23h-6.001a1 1 0 0 1-1-1v-5.455a2.997 2.997 0 1 0-5.993 0V22a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V11.543a1.002 1.002 0 0 1 .31-.724l10-9.543a1.001 1.001 0 0 1 1.38 0l10 9.543a1.002 1.002 0 0 1 .31.724V22a1 1 0 0 1-1 1Z"
 				></path>
 			</svg>
 		</a>
+	</div>
+
+	<!-- Main menu button -->
+	<div class="fixed top-4 left-4 md:hidden {$page.data.path.includes('Menu/') ? '' : 'hidden'}">
+		<a href="/menu" aria-label="Main menu">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="lucide lucide-utensils-crossed"
+				><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8" /><path
+					d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"
+				/><path d="m2.1 21.8 6.4-6.3" /><path d="m19 5-7 7" /></svg
+			>
+		</a>
+	</div>
+
+	<!-- Menu nav -->
+	<div
+	class="relative hidden w-full px-6 m-16 font-thin lg:w-2/3 xl:w-3/5 top-2 md:items-center md:justify-between md:flex-row md:flex md:text-xl"
+>
+</div>
+	<nav
+		class="absolute hidden w-full px-6 m-12 font-thin lg:w-2/3 xl:w-3/5 top-2 md:items-center md:justify-between md:flex-row md:flex md:text-xl"
+	>
+		<button class="p-6 hover:opacity-85"
+			><a
+				href="/menu/apps"
+				aria-label="Appetizers"
+				class={$page.data.path.includes('apps') ? 'border-b' : ''}>Appetizers</a
+			></button
+		>
+		<button class="p-6 hover:opacity-85"
+			><a
+				href="/menu/entrees"
+				class={$page.data.path.includes('entrees') ? 'border-b' : ''}
+				aria-label="Entrees">Entrees</a
+			></button
+		>
+		<button class="p-6 hover:opacity-85"
+			><a
+				href="/menu/burgers"
+				class={$page.data.path.includes('burgers') ? 'border-b' : ''}
+				aria-label="Burgers">Burgers</a
+			></button
+		>
+		<button class="p-6 hover:opacity-85"
+			><a
+				href="/menu/sandwiches"
+				class={$page.data.path.includes('sandwiches') ? 'border-b' : ''}
+				aria-label="Sandwiches">Sandwiches</a
+			></button
+		>
+		<button class="p-6 hover:opacity-85"
+			><a
+				href="/menu/kids"
+				class={$page.data.path.includes('kids') ? 'border-b' : ''}
+				aria-label="Kids">Kids</a
+			></button
+		>
+		<button class="p-6 hover:opacity-85"
+			><a
+				href="/menu/dessert"
+				class={$page.data.path.includes('dessert') ? 'border-b' : ''}
+				aria-label="Dessert">Dessert</a
+			></button
+		>
 	</nav>
 
-    <div class="-translate-y-24">
-        <a href="/specials.avif" target="_blank" class="text-3xl font-thin hover:text-gray-300" aria-label='See our specials'>See our specials</a>
-    </div>
-
-	{@render children?.()}
-
-
-	<!-- Centered band information -->
-	<!-- <div class="flex flex-col items-center justify-center w-full max-w-md px-4 -translate-y-12">
-		{#each bands as band}
-			<div class="flex flex-col w-full space-y-2 text-center">
-				<div class="text-xl font-thin">{band.date}</div>
-				<a href={band.link} class="text-lg hover:text-gray-300">{band.name}</a>
-				<div class="font-thin text-normal">{band.time}</div>
-			</div>
-			{#if band !== bands[bands.length - 1]}
-				<hr class="w-2/3 my-4 border-t border-gray-500" />
-			{/if}
-		{/each}
-	</div> -->
+	<div class="flex justify-center w-full h-full overflow-scroll">
+		{@render children?.()}
+	</div>
 </div>

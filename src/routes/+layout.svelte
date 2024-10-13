@@ -26,7 +26,10 @@
 	<enhanced:img
 		src="/static/range_rider_night.jpg"
 		alt=""
-		class="absolute -z-10 -top-12 object-contain md:inset-0 md:w-full md:h-full {(isOpen && !$page.data.path.includes('Music')) && (isOpen && !$page.data.path.includes('Menu')) 
+		class="absolute -z-10 -top-12 object-contain md:inset-0 md:w-full md:h-full {isOpen &&
+		!$page.data.path.includes('Music') &&
+		isOpen &&
+		!$page.data.path.includes('Menu')
 			? 'saturate-100'
 			: 'saturate-0'}"
 	/>
@@ -34,7 +37,9 @@
 	<!-- Content -->
 	<nav
 		class="container relative z-10 flex-col-reverse items-center justify-center hidden min-h-screen p-4 mx-auto overflow-hidden text-2xl font-thin text-gray-200 md:min-h-fit md:justify-between md:flex-row md:flex"
+		aria-label="Main navigation"
 	>
+	    <!-- Open sign -->
 		<OpenSign bind:isOpen />
 
 		<!-- Music -->
@@ -42,24 +47,29 @@
 			><a href="/music" class={$page.data.path.includes('Music') ? 'border-b' : ''}>Music</a
 			></button
 		>
+		
 		<!-- Phone number: clickable link on mobile, plain text on desktop -->
-		<div class="!top-0">
+		<div>
 			{#if isMobile}
-				<a href="tel:541-426-2337 !text-xl" class="">(541) 426-2337</a>
+				<a href="tel:541-426-2337" aria-label="Call Range Rider at 541-426-2337">(541) 426-2337</a>
 			{:else}
 				<span>(541) 426-2337</span>
 			{/if}
 		</div>
+
 		<!-- Menu -->
 		<button class="p-2 hover:opacity-85"
 			><a href="/menu" class={$page.data.path.includes('Menu') ? 'border-b' : ''}>Menu</a></button
 		>
 
 		<!-- Order now! -->
-		<button class="p-2 border-red-500 border rounded-sm hover:opacity-85 {isOpen ? '' : 'hidden'}"
+		<button
+			class="p-2 border-red-500 border rounded-sm hover:opacity-85 {isOpen ? '' : 'hidden'}"
+			aria-hidden={!isOpen}
 			><a href="https://www.toasttab.com/range-rider-107-northwest-1st-street/v3">Order now!</a
 			></button
 		>
+		
 		<!-- Hours when closed -->
 		<div class="flex flex-col space-y-2 {isOpen ? 'hidden' : ''}">
 			<p class="text-xs text-center text-gray-200 font-extralight">11 am to 10 pm</p>
@@ -92,6 +102,8 @@
 			{/if}
 		</p>
 		<div class="flex items-center justify-between space-x-4 md:justify-center">
+			
+			<!-- Facebook -->
 			<a
 				href="https://www.facebook.com/rangerideroregon/"
 				target="_blank"
@@ -119,11 +131,14 @@
 					></path></svg
 				></a
 			>
+			
 			<!-- Hours when closed -->
 			<div class="flex flex-col space-y-2 md:hidden">
 				<p class="text-xs text-center text-gray-200 font-extralight">11 am to 10 pm</p>
 				<p class="text-xs text-center text-gray-200 font-extralight">Closed Sundays</p>
 			</div>
+			
+			<!-- Instagram -->
 			<a
 				href="https://www.instagram.com/therangerideroregon"
 				target="_blank"

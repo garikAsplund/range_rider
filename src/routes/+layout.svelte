@@ -58,13 +58,13 @@
 		</div>
 
 		<!-- Menu -->
-		<button class="p-2 hover:opacity-85"
+		<button class="p-6 m-6 hover:opacity-85"
 			><a href="/menu" class={$page.data.path.includes('Menu') ? 'border-b' : ''}>Menu</a></button
 		>
 
 		<!-- Order now! -->
 		<button
-			class="p-2 border-red-500 border rounded-sm hover:opacity-85 {isOpen ? '' : 'hidden'}"
+			class="p-6 m-6 border-red-500 border rounded-sm hover:opacity-85 {isOpen ? '' : 'hidden'}"
 			aria-hidden={!isOpen}
 			><a href="https://www.toasttab.com/range-rider-107-northwest-1st-street/v3">Order now!</a
 			></button

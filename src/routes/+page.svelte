@@ -24,14 +24,14 @@
 
 	<!-- Order now! -->
 	<button
-		class="p-5 m-5 border-red-500 border rounded-sm hover:opacity-85 {isOpen ? '' : 'hidden'}"
+		class="p-6 m-6 border-red-500 border rounded-sm hover:opacity-85 {isOpen ? '' : 'hidden'}"
 		aria-hidden={!isOpen}
 		><a href="https://www.toasttab.com/range-rider-107-northwest-1st-street/v3">Order now!</a
 		></button
 	><!-- Menu -->
-	<button class="p-5 m-5 hover:opacity-85"><a href="/menu" aria-label="Menu">Menu</a></button>
+	<button class="p-6 m-6 hover:opacity-85"><a href="/menu" aria-label="Menu">Menu</a></button>
 	<!-- Music -->
-	<button class="p-5 m-5 hover:opacity-85"><a href="/music" aria-label="Music">Music</a></button>
+	<button class="p-6 m-6 hover:opacity-85"><a href="/music" aria-label="Music">Music</a></button>
 	<!-- Phone number: clickable link on mobile, plain text on desktop -->
 	<div class="m-11">
 		{#if isMobile}

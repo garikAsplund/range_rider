@@ -26,7 +26,7 @@
 	<enhanced:img
 		src="/static/range_rider_night.jpg"
 		alt=""
-		class="absolute -z-10 -top-12 object-contain md:inset-0 md:w-full md:h-full {isOpen
+		class="absolute -z-10 -top-12 object-contain md:inset-0 md:w-full md:h-full {(isOpen && !$page.data.path.includes('Music')) && (isOpen && !$page.data.path.includes('Menu')) 
 			? 'saturate-100'
 			: 'saturate-0'}"
 	/>

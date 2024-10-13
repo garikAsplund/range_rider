@@ -99,7 +99,7 @@
 					class="hover:opacity-85">107 NW 1st St, Enterprise, Oregon 97828</a
 				>
 			{:else}
-				<p>Booking: rangeridermusic@gmail.com</p>
+				Booking: rangeridermusic@gmail.com
 			{/if}
 		</p>
 		<div class="flex items-center justify-between space-x-4 md:justify-center">

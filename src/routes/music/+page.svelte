@@ -23,7 +23,7 @@
 </script>
 
 <div class="relative flex flex-col items-center justify-center w-full bg-black/90" style="height: calc(100vh - {navbarHeight}px);">
-	<!-- Home button in the upper right -->
+	<!-- Home button-->
 	<nav class="absolute top-4 right-4 md:justify-center md:flex md:inset-x-0">
 		<a href="/">
 			<svg
@@ -43,7 +43,7 @@
 		</a>
 	</nav>
 
-	<!-- Centered band information -->
+	<!-- Band info -->
 	<div class="flex flex-col items-center justify-center w-full max-w-md px-4 -translate-y-12">
 		{#each bands as band}
 			<div class="flex flex-col w-full space-y-2 text-center">

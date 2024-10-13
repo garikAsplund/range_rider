@@ -2,10 +2,11 @@
 	import '../app.css';
 	import { page } from '$app/stores';
 	import OpenSign from '$lib/components/OpenSign.svelte';
+	import { checkIfOpen } from '$lib/checkIfOpen';
 
-	let { children } = $props()
+	let { children } = $props();
 
-	let isOpen: boolean = $state(true);
+	let isOpen: boolean = $state(checkIfOpen());
 	// Detect if user is on a mobile device
 	let isMobile: boolean = $state(false);
 	if (typeof window !== 'undefined') {
@@ -16,9 +17,9 @@
 
 	console.log($page.data.path);
 
-	setTimeout(() => {
-		isOpen = !isOpen;
-	}, 7000);
+	// setTimeout(() => {
+	// 	isOpen = !isOpen;
+	// }, 7000);
 </script>
 
 <div class="relative z-0 min-h-screen overflow-hidden bg-[#0a0a0a]">
@@ -37,7 +38,10 @@
 		<OpenSign bind:isOpen />
 
 		<!-- Music -->
-		<button class="p-2 hover:opacity-85"><a href="/music" class="{$page.data.path.includes('Music') ? 'border-b' : ''}">Music</a></button>
+		<button class="p-2 hover:opacity-85"
+			><a href="/music" class={$page.data.path.includes('Music') ? 'border-b' : ''}>Music</a
+			></button
+		>
 		<!-- Phone number: clickable link on mobile, plain text on desktop -->
 		<div class="!top-0">
 			{#if isMobile}
@@ -47,48 +51,52 @@
 			{/if}
 		</div>
 		<!-- Menu -->
-		<button class="p-2 hover:opacity-85"><a href="/menu" class="{$page.data.path.includes('Menu') ? 'border-b' : ''}">Menu</a></button>
+		<button class="p-2 hover:opacity-85"
+			><a href="/menu" class={$page.data.path.includes('Menu') ? 'border-b' : ''}>Menu</a></button
+		>
 
 		<!-- Order now! -->
-		<button
-			class="p-2 border-red-500 border rounded-sm hover:opacity-85 {isOpen ? '' : 'hidden'}"
+		<button class="p-2 border-red-500 border rounded-sm hover:opacity-85 {isOpen ? '' : 'hidden'}"
 			><a href="https://www.toasttab.com/range-rider-107-northwest-1st-street/v3">Order now!</a
 			></button
 		>
 		<!-- Hours when closed -->
 		<div class="flex flex-col space-y-2 {isOpen ? 'hidden' : ''}">
-			<p class="text-xs text-center text-gray-200 font-extralight">
-				11 am to 10 pm
-			</p>
-			<p class="text-xs text-center text-gray-200 font-extralight">
-				Closed Sundays
-			</p>
+			<p class="text-xs text-center text-gray-200 font-extralight">11 am to 10 pm</p>
+			<p class="text-xs text-center text-gray-200 font-extralight">Closed Sundays</p>
 		</div>
 	</nav>
 
 	<!-- <slot /> -->
-	<div class="relative flex flex-col items-center justify-center w-full overflow-hidden text-gray-200">
-
-	 {@render children()}
+	<div
+		class="relative flex flex-col items-center justify-center w-full overflow-hidden text-gray-200"
+	>
+		{@render children()}
 	</div>
 
 	<!-- Footer -->
 	<footer
 		class="fixed bottom-0 left-0 right-0 z-10 flex-col justify-center mb-4 text-center text-white"
 	>
-		<p class="pb-2 text-xl text-center text-gray-400 -translate-y-7 md:text-gray-200 font-extralight">
+		<p
+			class="pb-2 text-xl text-center text-gray-400 -translate-y-7 md:text-gray-200 font-extralight"
+		>
 			{#if $page.data.path != 'Music'}
-			<a
-				href="https://www.google.com/maps/dir//107%20NW%201st%20St,%20Enterprise,%20Oregon%2097828"
-				target="_blank"
-				class="hover:opacity-85">107 NW 1st St, Enterprise, Oregon 97828</a
-			>
+				<a
+					href="https://www.google.com/maps/dir//107%20NW%201st%20St,%20Enterprise,%20Oregon%2097828"
+					target="_blank"
+					class="hover:opacity-85">107 NW 1st St, Enterprise, Oregon 97828</a
+				>
 			{:else}
-			<p>Booking: rangeridermusic@gmail.com</p>
+				<p>Booking: rangeridermusic@gmail.com</p>
 			{/if}
 		</p>
 		<div class="flex items-center justify-between space-x-4 md:justify-center">
-			<a href="https://www.facebook.com/rangerideroregon/" target="_blank" class="p-4 opacity-85 md:p-1 hover:opacity-65">
+			<a
+				href="https://www.facebook.com/rangerideroregon/"
+				target="_blank"
+				class="p-4 opacity-85 md:p-1 hover:opacity-65"
+			>
 				<svg
 					aria-label="Range Rider on Facebook"
 					fill="currentColor"
@@ -112,14 +120,10 @@
 				></a
 			>
 			<!-- Hours when closed -->
-		<div class="flex flex-col space-y-2 md:hidden">
-			<p class="text-xs text-center text-gray-200 font-extralight">
-				11 am to 10 pm
-			</p>
-			<p class="text-xs text-center text-gray-200 font-extralight">
-				Closed Sundays
-			</p>
-		</div>
+			<div class="flex flex-col space-y-2 md:hidden">
+				<p class="text-xs text-center text-gray-200 font-extralight">11 am to 10 pm</p>
+				<p class="text-xs text-center text-gray-200 font-extralight">Closed Sundays</p>
+			</div>
 			<a
 				href="https://www.instagram.com/therangerideroregon"
 				target="_blank"

@@ -1,9 +1,9 @@
 <script lang="ts">
-	// import '../app.css';
 	import OpenSign from '$lib/components/OpenSign.svelte';
+	import { checkIfOpen } from '$lib/checkIfOpen';
 
-	let isOpen: boolean = $state(true);
-	// Detect if user is on a mobile device
+	let isOpen: boolean = $state(checkIfOpen());
+
 	let isMobile: boolean = $state(false);
 	if (typeof window !== 'undefined') {
 		const userAgent = navigator.userAgent;

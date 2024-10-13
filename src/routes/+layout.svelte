@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import { page } from '$app/stores';
-	import OpenSign from '$lib/components/ui/button/OpenSign.svelte';
+	import OpenSign from '$lib/components/OpenSign.svelte';
 
 	let { children } = $props()
 
@@ -67,7 +67,7 @@
 	</nav>
 
 	<!-- <slot /> -->
-	<div class="relative flex flex-col items-center justify-center w-full overflow-hidden text-gray-200 bg-black/80">
+	<div class="relative flex flex-col items-center justify-center w-full overflow-hidden text-gray-200">
 
 	 {@render children()}
 	</div>
@@ -88,7 +88,7 @@
 			{/if}
 		</p>
 		<div class="flex items-center justify-between space-x-4 md:justify-center">
-			<a href="https://www.facebook.com/rangerideroregon/" target="_blank" class="p-4 md:p-1 hover:opacity-85">
+			<a href="https://www.facebook.com/rangerideroregon/" target="_blank" class="p-4 opacity-85 md:p-1 hover:opacity-65">
 				<svg
 					aria-label="Range Rider on Facebook"
 					fill="currentColor"
@@ -123,7 +123,7 @@
 			<a
 				href="https://www.instagram.com/therangerideroregon"
 				target="_blank"
-				class="p-4 md:p-1 hover:opacity-85"
+				class="p-4 md:p-1 hover:opacity-65 opacity-85"
 			>
 				<svg
 					aria-label="Range Rider on Instagram"

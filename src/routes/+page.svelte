@@ -1,6 +1,6 @@
 <script lang="ts">
 	// import '../app.css';
-	import OpenSign from '$lib/components/ui/button/OpenSign.svelte';
+	import OpenSign from '$lib/components/OpenSign.svelte';
 
 	let isOpen: boolean = $state(true);
 	// Detect if user is on a mobile device
@@ -18,7 +18,7 @@
 
 <div class="absolute flex items-center justify-around w-full text-gray-200"></div>
 <nav
-	class="container relative z-10 flex flex-col-reverse items-center justify-center min-h-screen p-4 mx-auto text-2xl font-thin text-gray-200 bg-black/40 md:min-h-fit md:justify-between md:flex-row md:hidden"
+	class="container relative z-10 flex flex-col-reverse items-center justify-center min-h-screen p-4 mx-auto text-2xl font-thin text-gray-200 bg-black/50 md:min-h-fit md:justify-between md:flex-row md:hidden"
 >
 	<!-- Contact -->
 	<div class="m-7"><OpenSign bind:isOpen /></div>

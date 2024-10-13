@@ -23,7 +23,7 @@
 	});
 </script>
 
-<div class="relative flex flex-col items-center justify-center w-full bg-black/90 " style="height: calc(100vh - {navbarHeight}px);">
+<div class="relative flex flex-col items-center justify-center w-full md:bg-black/80 bg-black/50" style="height: calc(100vh - {navbarHeight}px);">
 	<!-- Home button in the upper right -->
 	<nav class="absolute top-4 right-4 md:justify-center md:flex md:inset-x-0">
 		<a href="/">
@@ -45,7 +45,7 @@
 	</nav>
 
     <div class="-translate-y-24">
-        <a href="/specials.avif" target="_blank" class="text-3xl font-thin hover:text-gray-300">See our specials</a>
+        <a href="/specials.avif" target="_blank" class="text-3xl font-thin hover:text-gray-300" aria-label='See our specials'>See our specials</a>
     </div>
 
 	{@render children?.()}

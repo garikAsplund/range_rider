@@ -22,7 +22,7 @@
 	});
 </script>
 
-<div class="relative flex flex-col items-center justify-center w-full bg-black/90" style="height: calc(100vh - {navbarHeight}px);">
+<div class="relative flex flex-col items-center justify-center w-full md:bg-black/80 bg-black/50" style="height: calc(100vh - {navbarHeight}px);">
 	<!-- Home button-->
 	<nav class="absolute top-4 right-4 md:justify-center md:flex md:inset-x-0">
 		<a href="/">

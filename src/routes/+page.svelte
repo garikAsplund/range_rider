@@ -1,8 +1,8 @@
 <script lang="ts">
 	import OpenSign from '$lib/components/OpenSign.svelte';
-	import { checkIfOpen } from '$lib/checkIfOpen';
+	import { page } from '$app/stores';
 
-	let isOpen: boolean = $state(checkIfOpen());
+	let isOpen: boolean = $state($page.data.isOpen);
 
 	let isMobile: boolean = $state(false);
 	if (typeof window !== 'undefined') {

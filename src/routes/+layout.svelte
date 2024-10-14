@@ -78,7 +78,7 @@
 
 	<!-- <slot /> -->
 	<div
-		class="relative flex flex-col items-center justify-center w-full overflow-hidden text-gray-200"
+		class="relative flex flex-col w-full overflow-hidden text-gray-200"
 	>
 		{@render children()}
 	</div>

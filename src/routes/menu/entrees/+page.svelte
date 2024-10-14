@@ -1,5 +1,6 @@
 <script lang="ts">
-	import type { PageData } from './$types';
-
-	export let data: PageData;
+	import MenuSection from '$lib/components/MenuSection.svelte';
+	import { entrees } from '$lib/menu';
 </script>
+
+<MenuSection section={entrees} />

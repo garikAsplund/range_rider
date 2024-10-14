@@ -4,7 +4,7 @@ const appetizers = [
     { name: "Onion Rings", price: "$10.50" },
     { name: "Poppers", price: "$9.00" },
     { name: "Fried Pickles", price: "$8.00" },
-    { name: "Chicken Wings (per wing) Sweet & Spicy or BBQ", price: "$2.50" },
+    { name: "Chicken Wings", price: "$2.50 per wing" },
     { name: "French Fries", price: "$6.00" },
     { name: "Sweet Potato Fries", price: "$9.00" },
     { name: "Sidewinders", price: "$6.00" },

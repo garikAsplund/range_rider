@@ -54,10 +54,10 @@
 	</div>
 
 	<!-- Hours when closed -->
-	<div class="absolute inset-x-0 bottom-0 mb-6">
+	<!-- <div class="absolute inset-x-0 bottom-0 mb-6">
 		<div class="flex flex-col space-y-2 md:hidden">
 			<p class="text-xs text-center text-gray-200 font-extralight">11 am to 10 pm</p>
 			<p class="text-xs text-center text-gray-200 font-extralight">Closed Sundays</p>
 		</div>
-	</div>
+	</div> -->
 </nav>

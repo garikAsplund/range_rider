@@ -100,6 +100,15 @@
 				Booking: rangeridermusic@gmail.com
 			{/if}
 		</p>
+
+		<!-- Hours when closed -->
+	<div class="absolute inset-x-0 bottom-0 {$page.data.path.includes('Music') ? 'hidden' : ''}">
+		<div class="flex flex-col space-y-2 md:hidden">
+			<p class="text-xs text-center text-gray-200 font-extralight">11 am to 10 pm</p>
+			<p class="text-xs text-center text-gray-200 font-extralight">Closed Sundays</p>
+		</div>
+	</div>
+
 		<div class="flex items-center justify-between space-x-4 md:justify-center {$page.data.path.includes('Music') ? 'hidden' : ''}">
 			
 			<!-- Facebook -->

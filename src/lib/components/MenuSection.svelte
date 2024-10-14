@@ -2,8 +2,8 @@
     export let section;
 </script>
 
-<div class="flex justify-center w-full overflow-scroll">
-	<div class="grid w-2/3 h-full grid-cols-1 gap-4 mt-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+<div class="flex flex-col items-center justify-start w-full overflow-scroll bg-black/60 md:bg-inherit">
+	<div class="grid w-2/3 grid-cols-1 gap-4 mt-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 		{#each section as item}
 				<div class="p-3">
 					<h2 class="text-2xl font-semibold text-gray-300">{item.name}</h2>

@@ -4,17 +4,23 @@
 
 	let { children } = $props();
 	let navbarHeight: number = $state(0);
+	let footerHeight: number = $state(0);
 
 	onMount(() => {
 		const navbar = document.getElementById('main_navbar');
 		if (navbar) {
 			navbarHeight = navbar.offsetHeight;
 		}
+
+		const footer = document.getElementById('menu_footer');
+		if (footer) {
+			footerHeight = footer.offsetHeight;
+		}
 	});
 </script>
 
 <div
-	class="relative flex flex-col items-center w-full md:bg-black/80 bg-black/50"
+	class="flex flex-col items-center w-full md:bg-black/80 bg-black/50"
 	style="height: calc(100vh - {navbarHeight}px);"
 >
 	<!-- Home button -->
@@ -92,7 +98,7 @@
 			><a
 				href="/menu/kids"
 				class={$page.data.path.includes('kids') ? 'border-b' : ''}
-				aria-label="Kids">Kids</a
+				aria-label="Kids">Kids'</a
 			></button
 		>
 		<button class="p-6 hover:opacity-85"
@@ -104,16 +110,18 @@
 		>
 	</nav>
 
-	<div class="flex justify-center w-full h-full overflow-scroll md:!h-fit">
+	<div class="flex justify-center w-full h-full overflow-scroll"
+	>
 		{@render children?.()}
 	</div>
 
 	<footer
-		class=" md:fixed md:flex hidden bottom-0 left-0 right-0 z-10 flex-row justify-center text-center text-white {$page.data.path.includes(
+		class="pt-36 md:fixed md:flex hidden bottom-0 left-0 right-0 z-10 flex-row justify-center text-center text-white {$page.data.path.includes(
 			'apps'
 		)
 			? ''
 			: 'hidden'}"
+		id="menu_footer"
 	>
 		<p class="text-xl text-center text-gray-300 md:text-gray-200 font-extralight">
 			<button class="p-6 m-6 hover:opacity-85"

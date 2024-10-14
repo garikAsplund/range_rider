@@ -2,11 +2,11 @@
 	import '../app.css';
 	import { page } from '$app/stores';
 	import OpenSign from '$lib/components/OpenSign.svelte';
-	import { checkIfOpen } from '$lib/checkIfOpen';
+	// import { checkIfOpen } from '$lib/checkIfOpen';
 
 	let { children } = $props();
 
-	let isOpen: boolean = $state(checkIfOpen());
+	let isOpen: boolean = $state($page.data.isOpen);
 	// Detect if user is on a mobile device
 	let isMobile: boolean = $state(false);
 	if (typeof window !== 'undefined') {

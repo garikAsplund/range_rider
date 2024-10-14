@@ -94,13 +94,13 @@
 				<a
 					href="https://www.google.com/maps/dir//107%20NW%201st%20St,%20Enterprise,%20Oregon%2097828"
 					target="_blank"
-					class="hover:opacity-85">107 NW 1st St, Enterprise, Oregon 97828</a
+					class="hidden hover:opacity-85 md:block">107 NW 1st St, Enterprise, Oregon 97828</a
 				>
 			{:else}
 				Booking: rangeridermusic@gmail.com
 			{/if}
 		</p>
-		<div class="flex items-center justify-between space-x-4 md:justify-center">
+		<div class="flex items-center justify-between space-x-4 md:justify-center {$page.data.path.includes('Music') ? 'hidden' : ''}">
 			<!-- Facebook -->
 			<a
 				href="https://www.facebook.com/rangerideroregon/"
@@ -129,12 +129,6 @@
 					></path></svg
 				></a
 			>
-
-			<!-- Hours when closed -->
-			<div class="flex flex-col space-y-2 md:hidden">
-				<p class="text-xs text-center text-gray-200 font-extralight">11 am to 10 pm</p>
-				<p class="text-xs text-center text-gray-200 font-extralight">Closed Sundays</p>
-			</div>
 
 			<!-- Instagram -->
 			<a

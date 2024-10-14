@@ -17,7 +17,7 @@
 </script>
 
 <div
-	class="flex flex-col items-center w-full md:bg-black/80 bg-black/50"
+	class="flex flex-col items-center w-full md:bg-black/80 bg-black/70"
 	style="height: calc(100vh - {navbarHeight}px);"
 >
 	<!-- Home button -->

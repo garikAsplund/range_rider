@@ -1,17 +1,14 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
-
 	let { children } = $props();
 	let navbarHeight: number = $state(0);
 	let footerHeight: number = $state(0);
-
 	onMount(() => {
 		const navbar = document.getElementById('main_navbar');
 		if (navbar) {
 			navbarHeight = navbar.offsetHeight;
 		}
-
 		const footer = document.getElementById('menu_footer');
 		if (footer) {
 			footerHeight = footer.offsetHeight;
@@ -40,7 +37,6 @@
 			</svg>
 		</a>
 	</div>
-
 	<!-- Back button -->
 	<div class="fixed top-4 left-4 md:hidden {$page.data.path.includes('Menu/') ? '' : 'hidden'}">
 		<a href="/menu" aria-label="Back to main menu">
@@ -58,7 +54,6 @@
 			>
 		</a>
 	</div>
-
 	<!-- Menu nav -->
 	<div
 		class="relative hidden w-full px-6 m-16 font-thin lg:w-2/3 xl:w-3/5 top-2 md:items-center md:justify-between md:flex-row md:flex md:text-xl"
@@ -109,12 +104,19 @@
 			></button
 		>
 	</nav>
-
-	<div class="flex justify-center w-full h-full overflow-scroll"
+	<div
+		class="flex justify-center {$page.data.path.includes('Menu/')
+			? 'items-start'
+			: 'items-center'} w-full {$page.data.path.includes('Specials')
+			? 'overflow-hidden'
+			: 'overflow-auto'}
+			"
+		style="height: calc(100% - {footerHeight}px);"
 	>
-		{@render children?.()}
+		<div class="max-w-full max-h-full ">
+			{@render children?.()}
+		</div>
 	</div>
-
 	<footer
 		class="pt-36 md:fixed md:flex hidden bottom-0 left-0 right-0 z-10 flex-row justify-center text-center text-white {$page.data.path.includes(
 			'apps'
@@ -130,7 +132,7 @@
 					target="_blank">Photo menu</a
 				>
 			</button>
-			&nbsp&nbsp|&nbsp&nbsp
+			&nbsp;&nbsp;|&nbsp;&nbsp;
 			<button class="p-6 m-6 hover:opacity-85">
 				<a
 					href="https://rangerideroregon.com/wp-content/uploads/2023/11/RRMenuFall2023.pdf"

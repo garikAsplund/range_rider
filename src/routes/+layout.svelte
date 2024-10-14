@@ -14,9 +14,9 @@
 		isMobile = /android|iphone|ipad|ipod/i.test(userAgent);
 	}
 
-	setTimeout(() => {
-		isOpen = !isOpen;
-	}, 3000);
+	// setTimeout(() => {
+	// 	isOpen = !isOpen;
+	// }, 3000);
 </script>
 
 <div class="relative z-0 min-h-screen overflow-hidden bg-[#0a0a0a]">

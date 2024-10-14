@@ -12,14 +12,11 @@
 	if (typeof window !== 'undefined') {
 		const userAgent = navigator.userAgent;
 		isMobile = /android|iphone|ipad|ipod/i.test(userAgent);
-		console.log({ userAgent });
 	}
 
-	// console.log($page.data.path);
-
-	// setTimeout(() => {
-	// 	isOpen = !isOpen;
-	// }, 7000);
+	setTimeout(() => {
+		isOpen = !isOpen;
+	}, 3000);
 </script>
 
 <div class="relative z-0 min-h-screen overflow-hidden bg-[#0a0a0a]">

@@ -8,12 +8,7 @@
 	if (typeof window !== 'undefined') {
 		const userAgent = navigator.userAgent;
 		isMobile = /android|iphone|ipad|ipod/i.test(userAgent);
-		console.log({ userAgent });
 	}
-
-	// setTimeout(() => {
-	// 	isOpen = !isOpen;
-	// }, 3000);
 </script>
 
 <div class="absolute flex items-center justify-around w-full text-gray-200"></div>

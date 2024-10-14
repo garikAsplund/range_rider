@@ -58,9 +58,8 @@
 
 	<!-- Menu nav -->
 	<div
-	class="relative hidden w-full px-6 m-16 font-thin lg:w-2/3 xl:w-3/5 top-2 md:items-center md:justify-between md:flex-row md:flex md:text-xl"
->
-</div>
+		class="relative hidden w-full px-6 m-16 font-thin lg:w-2/3 xl:w-3/5 top-2 md:items-center md:justify-between md:flex-row md:flex md:text-xl"
+	></div>
 	<nav
 		class="absolute hidden w-full px-6 m-12 font-thin lg:w-2/3 xl:w-3/5 top-2 md:items-center md:justify-between md:flex-row md:flex md:text-xl"
 	>
@@ -108,7 +107,31 @@
 		>
 	</nav>
 
-	<div class="flex justify-center w-full h-full overflow-scroll">
+	<div class="flex justify-center w-full h-full overflow-scroll md:!h-fit">
 		{@render children?.()}
 	</div>
+
+	<footer
+		class=" md:fixed md:flex hidden bottom-0 left-0 right-0 z-10 flex-row justify-center text-center text-white {$page.data.path.includes(
+			'apps'
+		)
+			? ''
+			: 'hidden'}"
+	>
+		<p class="text-xl text-center text-gray-300 md:text-gray-200 font-extralight">
+			<button class="p-6 m-6 hover:opacity-85"
+				><a
+					href="https://rangerideroregon.com/wp-content/uploads/2023/11/RRMenuFall2023_1-scaled.jpg"
+					target="_blank">Photo menu</a
+				>
+			</button>
+			&nbsp&nbsp|&nbsp&nbsp
+			<button class="p-6 m-6 hover:opacity-85">
+				<a
+					href="https://rangerideroregon.com/wp-content/uploads/2023/11/RRMenuFall2023.pdf"
+					target="_blank">PDF menu</a
+				>
+			</button>
+		</p>
+	</footer>
 </div>

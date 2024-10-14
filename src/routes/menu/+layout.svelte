@@ -113,7 +113,7 @@
 			"
 		style="height: calc(100% - {footerHeight}px);"
 	>
-		<div class="max-w-full max-h-full ">
+		<div class="flex justify-center w-full h-full ">
 			{@render children?.()}
 		</div>
 	</div>

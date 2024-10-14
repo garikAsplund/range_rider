@@ -1,5 +1,5 @@
 <!-- Specials -->
-<button class="p-6 m-6 -translate-y-12 hover:text-gray-300">
+<button class="hidden p-6 m-6 -translate-y-12 md:block hover:text-gray-300">
 	<a
 		href="menu/specials"
 		class="text-3xl font-thin"

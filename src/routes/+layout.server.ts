@@ -4,7 +4,6 @@ import { checkIfOpen } from '$lib/checkIfOpen';
 export const load: LayoutServerLoad = async ({ route }) => {
   const { id } = route;
 
-  // Determine if the restaurant is open
   const isOpen = checkIfOpen();
 
   if (id) {

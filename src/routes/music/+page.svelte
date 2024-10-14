@@ -1,18 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { bands } from '$lib/bands';
 
 	let navbarHeight: number = $state(0);
-
-	const bands: Array<{ name: string; date: string; time: string; link: string }> = [
-		{ name: 'Bart Budwig', date: 'Fri 8 Nov ', time: '8 pm', link: 'https://www.bartbudwig.com/' },
-		{
-			name: 'Margo Cilker',
-			date: 'Thu 14 Nov ',
-			time: '7 pm',
-			link: 'https://www.margocilkermusic.com/'
-		},
-		{ name: 'The Shook Twins', date: 'Sat 23 Nov ', time: '9 pm', link: 'https://shooktwins.com/' }
-	];
 
 	onMount(() => {
 		const navbar = document.getElementById('main_navbar');
@@ -47,7 +37,7 @@
 	</nav>
 
 	<!-- Band info -->
-	<div class="flex flex-col items-center justify-center w-full max-w-md px-4 -translate-y-12">
+	<div class="flex flex-col items-center justify-center w-full max-w-md px-4 md:-translate-y-12">
 		{#each bands as band}
 			<div class="flex flex-col w-full space-y-2 text-center">
 				<div class="text-xl font-thin">{band.date}</div>

@@ -101,6 +101,7 @@
 			{/if}
 		</p>
 		<div class="flex items-center justify-between space-x-4 md:justify-center {$page.data.path.includes('Music') ? 'hidden' : ''}">
+			
 			<!-- Facebook -->
 			<a
 				href="https://www.facebook.com/rangerideroregon/"

@@ -20,6 +20,7 @@
 	class="flex flex-col items-center w-full md:bg-black/80 bg-black/70"
 	style="height: calc(100vh - {navbarHeight}px);"
 >
+
 	<!-- Home button -->
 	<div class="absolute top-4 right-4 md:justify-center md:flex md:inset-x-0 md:absolute">
 		<a href="/" aria-label="Home">
@@ -37,6 +38,7 @@
 			</svg>
 		</a>
 	</div>
+	
 	<!-- Back button -->
 	<div class="fixed top-4 left-4 md:hidden {$page.data.path.includes('Menu/') ? '' : 'hidden'}">
 		<a href="/menu" aria-label="Back to main menu">
@@ -54,6 +56,7 @@
 			>
 		</a>
 	</div>
+	
 	<!-- Menu nav -->
 	<div
 		class="relative hidden w-full px-6 m-16 font-thin lg:w-2/3 xl:w-3/5 top-2 md:items-center md:justify-between md:flex-row md:flex md:text-xl"

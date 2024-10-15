@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
+	
 	let { children } = $props();
 	let navbarHeight: number = $state(0);
 	let footerHeight: number = $state(0);
+	
 	onMount(() => {
 		const navbar = document.getElementById('main_navbar');
 		if (navbar) {

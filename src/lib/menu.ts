@@ -1,5 +1,3 @@
-// menuData.js
-
 const appetizers = [
     { name: "Onion Rings", price: "$10.50" },
     { name: "Poppers", price: "$9.00" },

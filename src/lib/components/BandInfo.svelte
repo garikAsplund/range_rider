@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { bands } from '$lib/bands';
+	import { bands, type Band } from '$lib/bands';
 
-	function getStructuredData(bands) {
+	function getStructuredData(bands: Band[]) {
 		return JSON.stringify(
 			bands.map((band) => ({
 				'@context': 'https://schema.org',
@@ -34,7 +34,6 @@
 
 <svelte:head>
 	{@html '<script type="application/ld+json">' + structuredData + '</script>'}
-
 </svelte:head>
 
 <div class="flex flex-col items-center justify-center w-full max-w-md px-4 md:-translate-y-12">

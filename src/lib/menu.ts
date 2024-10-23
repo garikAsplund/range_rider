@@ -1,4 +1,10 @@
-const appetizers = [
+interface MenuItem {
+    name: string;
+    price: string;
+    description?: string;
+}
+
+const appetizers: MenuItem[] = [
     { name: "Onion Rings", price: "$10.50" },
     { name: "Poppers", price: "$9.00" },
     { name: "Fried Pickles", price: "$8.00" },
@@ -9,13 +15,13 @@ const appetizers = [
     { name: "Appetizer Sampler", price: "$14.00", description: "mix of deep fried pickles, poppers and onion rings" }
 ];
 
-const sauces = [
+const sauces: MenuItem[] = [
     { name: "Ranch, Jalapeno Ranch, Fry Sauce, Tarter, BBQ", price: "$0.75" },
     { name: "Sweet & Sour Aioli, Mae Ploy", price: "$1.25" },
     { name: "Blue Cheese Dressing & A1", price: "$1.75" }
 ];
 
-const soupAndSalad = [
+const soupAndSalad: MenuItem[] = [
     { name: "Cup of Soup", price: "$5.00" },
     { name: "Bowl of Soup", price: "$8.00" },
     { name: "Side Salad and Bowl of Soup with Toast", price: "$12.00" },
@@ -24,7 +30,7 @@ const soupAndSalad = [
     { name: "Caesar Salad", price: "$11.00", description: "Creamy Caesar salad with croutons and parmesan with toast" }
 ];
 
-const saladAddOns = [
+const saladAddOns: MenuItem[] = [
     { name: "Add Grilled Chicken", price: "$5.50" },
     { name: "Shrimp", price: "$5.50" },
     { name: "Steak", price: "$9.00" },
@@ -33,7 +39,7 @@ const saladAddOns = [
     { name: "Portabella Mushroom", price: "$5.00" }
 ];
 
-const entrees = [
+const entrees: MenuItem[] = [
     { name: "Chicken Strips", price: "$11.00", description: "Hand-cut and buttermilk battered to order. Served with sweet & sour sauce." },
     { name: "Coconut Chicken Strips", price: "$14.00", description: "Hand-cut and breaded with coconut and panko. Served with Sweet & Sour Aioli." },
     { name: "Steak Strips", price: "$14.00", description: "Charbroiled hand-cut tender steak strips" },
@@ -43,7 +49,7 @@ const entrees = [
     { name: "Coconut Shrimp", price: "$14.00", description: "Crispy and delicious- served with creamy sweet & sour sauce." }
 ];
 
-const burgers = [
+const burgers: MenuItem[] = [
     { name: "Beef Burger", price: "$14.00", description: "6 Ranch hand-formed charbroiled burger topped with mayo, lettuce, tomato, onion, pickle on a Tuscan bun" },
     { name: "Cheeseburger", price: "$15.50", description: "6 Ranch hand-formed charbroiled beef burger with your choice of pepper jack, cheddar, swiss or blue cheese. Topped with mayo, lettuce, tomato, onion, pickle on a Tuscan bun" },
     { name: "Bacon Cheeseburger", price: "$17.50", description: "6 Ranch hand-formed charbroiled beef patty with Honey Smoked Bacon and your choice of pepper jack, cheddar, swiss or blue cheese. Topped with mayo, lettuce, tomato, onion and pickle on a Tuscan bun" },
@@ -51,7 +57,7 @@ const burgers = [
     { name: "Black Bean Burger", price: "$12.50", description: "Grilled black bean burger on ciabatta with garlic aioli and served with lettuce, tomato, onion and pickle on a Tuscan bun" }
 ];
 
-const sandwiches = [
+const sandwiches: MenuItem[] = [
     { name: "Chicken Breast Sandwich", price: "$11.50", description: "Charbroiled and topped with mayo, lettuce, tomato, onion and pickles on a ciabatta" },
     { name: "Coconut Chicken Sandwich", price: "$14.00", description: "Hand-breaded coconut and panko chicken served on a toasted Tuscan bun, topped with a creamy sweet and sour aioli, cucumber, cilantro and siracha" },
     { name: "Reuben Sandwich", price: "$17.00", description: "Corned beef with sauerkraut and Swiss cheese with Russian dressing on toasted marbled rye." },
@@ -61,14 +67,14 @@ const sandwiches = [
     { name: "B.L.T.", price: "$11.00", description: "Bacon, lettuce, tomato, and mayo on toasted sourdough" }
 ];
 
-const kids = [
+const kids: MenuItem[] = [
     { name: "Mini Corn Dogs", price: "$7", description: "with choice of side" },
     { name: "Grilled Cheese", price: "$9", description: "with choice of side" },
     { name: "Chicken Strips", price: "$8", description: "with choice of side" },
     { name: "Plain Kid's Burger", price: "$10", description: "plain buttered bun with choice of side" }
 ];
 
-const dessert = [
+const dessert: MenuItem[] = [
     { name: "Sugartime Bakery selections", price: "$5.00", description: "Ask us for our current selections" }
 ];
 

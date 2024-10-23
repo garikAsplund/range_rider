@@ -18,7 +18,7 @@ const structuredData = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Menu",
     "name": "The Range Rider Menu",
-    "menuItem": menuItems.map(item => ({
+    "hasMenuItem": menuItems.map(item => ({
         "@type": "MenuItem",
         "name": item.name,
         "description": item.description || "",

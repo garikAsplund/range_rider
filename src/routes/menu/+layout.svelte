@@ -4,6 +4,7 @@
 	import HomeButton from '$lib/components/HomeButton.svelte';
 	import BackButton from '$lib/components/BackButton.svelte';
 	import MobileFooter from '$lib/components/MobileFooter.svelte';
+	import MenuNav from '$lib/components/MenuNav.svelte';
 
 	let { children } = $props();
 	let navbarHeight: number = $state(0);
@@ -21,6 +22,11 @@
 	});
 </script>
 
+<svelte:head>
+  <title>The Range Rider | Menu</title>
+  <meta name="description" content="Enjoy great food at The Range Rider in Enterprise, Oregon." />
+</svelte:head>
+
 <div
 	class="flex flex-col items-center w-full md:bg-black/80 bg-black/70"
 	style="height: calc(100vh - {navbarHeight}px);"
@@ -35,6 +41,7 @@
 	<div
 		class="relative hidden w-full px-6 m-16 font-thin lg:w-2/3 xl:w-3/5 top-2 md:items-center md:justify-between md:flex-row md:flex md:text-xl"
 	></div>
+	<MenuNav />
 	
 
 	<!-- For spacing -->

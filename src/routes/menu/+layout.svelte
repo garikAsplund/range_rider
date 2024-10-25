@@ -3,7 +3,7 @@
 	import { page } from '$app/stores';
 	import HomeButton from '$lib/components/HomeButton.svelte';
 	import BackButton from '$lib/components/BackButton.svelte';
-	import MobileFooter from '$lib/components/MobileFooter.svelte';
+	import MobileFooter from '$lib/components/MobileMenuFooter.svelte';
 	import MenuNav from '$lib/components/MenuNav.svelte';
 
 	let { children } = $props();
@@ -34,15 +34,11 @@
 	<!-- Home button -->
 	<HomeButton />
 
-	<!-- Back button -->
-	<BackButton />
-
 	<!-- Menu nav -->
 	<div
 		class="relative hidden w-full px-6 m-16 font-thin lg:w-2/3 xl:w-3/5 top-2 md:items-center md:justify-between md:flex-row md:flex md:text-xl"
 	></div>
 	<MenuNav />
-	
 
 	<!-- For spacing -->
 	<div
@@ -59,6 +55,4 @@
 			{@render children?.()}
 		</div>
 	</div>
-
-	<MobileFooter />
 </div>

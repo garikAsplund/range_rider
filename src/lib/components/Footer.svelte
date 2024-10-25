@@ -11,7 +11,7 @@
 >
 
 	<!-- Address or booking email -->
-	<p class="pb-2 text-xl text-center text-gray-300 -translate-y-7 md:text-gray-200 font-extralight">
+	<p class="pb-2 text-xl text-center text-gray-300 -translate-y-12 md:text-gray-200 font-extralight">
 		{#if $page.data?.path != 'Music'}
 			<a
 				href="https://www.google.com/maps/dir//107%20NW%201st%20St,%20Enterprise,%20Oregon%2097828"

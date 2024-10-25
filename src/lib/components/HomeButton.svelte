@@ -1,5 +1,5 @@
 <!-- Home button -->
-<div class="absolute top-4 right-4 md:justify-center md:flex md:inset-x-0 md:absolute">
+<div class="absolute hidden md:top-4 md:justify-center md:flex md:inset-x-0 md:absolute">
 	<a href="/" aria-label="Home">
 		<svg
 			class="x1lliihq x1n2onr6 x5n08af"

@@ -3,6 +3,7 @@
 	import { page } from '$app/stores';
 	import NavBar from '$lib/components/NavBar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import MobileFooter from '$lib/components/MobileFooter.svelte';
 	
 	let { children } = $props();
 </script>
@@ -26,4 +27,5 @@
 	</div>
 
 	<Footer />
+	<MobileFooter />
 </div>

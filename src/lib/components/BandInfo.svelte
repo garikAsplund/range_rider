@@ -36,7 +36,7 @@
 	{@html '<script type="application/ld+json">' + structuredData + '</script>'}
 </svelte:head>
 
-<div class="flex flex-col items-center justify-center w-full max-w-md px-4 md:-translate-y-12">
+<div class="relative flex flex-col items-center justify-center w-full max-w-md px-4 overflow-scroll md:-translate-y-12">
 	{#each bands as band}
 		<div class="flex flex-col w-full space-y-2 text-center">
 			<div class="text-xl font-thin">{band.date}</div>

@@ -1,5 +1,8 @@
-<!-- Home button -->
-<div class="absolute hidden md:top-4 md:justify-center md:flex md:inset-x-0 md:absolute">
+<script lang="ts">
+	import { page } from "$app/stores";
+</script>
+
+<div class="justify-center {$page.url.pathname !== '/' ? 'visible' : 'invisible'} hidden md:flex mb-4">
 	<a href="/" aria-label="Home">
 		<svg
 			class="x1lliihq x1n2onr6 x5n08af"

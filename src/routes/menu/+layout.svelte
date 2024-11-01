@@ -32,7 +32,7 @@
 	style="height: calc(100vh - {navbarHeight}px);"
 >
 	<!-- Home button -->
-	<HomeButton />
+	<!-- <HomeButton /> -->
 
 	<!-- Menu nav -->
 	<div

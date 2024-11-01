@@ -22,7 +22,7 @@
 	class="relative flex flex-col items-center justify-center w-full md:bg-black/80 bg-black/70"
 	style="height: calc(100vh - {navbarHeight}px);"
 >
-	<HomeButton />
+	<!-- <HomeButton /> -->
 
 	<BandInfo />
 </div>
